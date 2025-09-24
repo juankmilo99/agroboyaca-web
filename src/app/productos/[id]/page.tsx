@@ -4,8 +4,9 @@ import { productos } from "@/lib/data";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
-export default function ProductDetail({ params }: { params: { id: string } }) {
-  const product = productos.find((p) => p.id === params.id);
+export default async function ProductDetail({ params }: { params: Promise<{ id: string }> }) {
+  const { id } = await params;
+  const product = productos.find((p) => p.id === id);
   if (!product) return notFound();
 
   return (

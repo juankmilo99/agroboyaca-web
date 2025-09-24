@@ -4,8 +4,9 @@ import { notFound } from "next/navigation";
 import { productores, productos } from "@/lib/data";
 import { ProductCard } from "@/components/product-card";
 
-export default function ProducerProfile({ params }: { params: { id: string } }) {
-  const producer = productores.find((p) => p.id === params.id);
+export default async function ProducerProfile({ params }: { params: Promise<{ id: string }> }) {
+  const { id } = await params;
+  const producer = productores.find((p) => p.id === id);
   if (!producer) return notFound();
   const items = productos.filter((p) => p.productorId === producer.id);
 

@@ -20,7 +20,7 @@ export function Navbar() {
     <header className="sticky top-0 z-40 w-full border-b bg-background/80 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="mx-auto flex h-14 max-w-6xl items-center gap-4 px-4">
         <Link href="/" className="flex items-center gap-2 font-semibold">
-          <Leaf className="h-5 w-5 text-emerald-600" /> AgroBoyacá
+          <Leaf className="h-5 w-5 text-emerald-600" /> AgroNexo
         </Link>
         <nav className="hidden md:flex items-center gap-6 text-sm">
           {links.map((l) => (

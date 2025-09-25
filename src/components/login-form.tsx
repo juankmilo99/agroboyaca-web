@@ -32,7 +32,7 @@ export function LoginForm() {
       <CardHeader className="space-y-1">
         <CardTitle className="text-2xl text-center">Iniciar sesión</CardTitle>
         <CardDescription className="text-center">
-          Accede a tu cuenta de AgroBoyacá
+          Accede a tu cuenta de AgroNexo
         </CardDescription>
       </CardHeader>
       <CardContent>

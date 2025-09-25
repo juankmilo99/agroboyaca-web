@@ -16,7 +16,7 @@ type Props = {
 
 export function FiltersSidebar({ value, onChange }: Props) {
   return (
-    <aside className="w-full md:w-64 shrink-0 space-y-6">
+    <aside className="w-full md:w-64 shrink-0 space-y-6 relative z-10">
       <div className="space-y-2">
         <p className="text-sm font-medium">Tipo de producto</p>
         <Select
@@ -26,7 +26,7 @@ export function FiltersSidebar({ value, onChange }: Props) {
           <SelectTrigger>
             <SelectValue placeholder="Selecciona tipo" />
           </SelectTrigger>
-          <SelectContent>
+          <SelectContent className="z-[100] bg-white border-gray-200 shadow-lg">
             {tiposProducto.map((t) => (
               <SelectItem key={t} value={t}>
                 {t}
@@ -45,7 +45,7 @@ export function FiltersSidebar({ value, onChange }: Props) {
           <SelectTrigger>
             <SelectValue placeholder="Municipio" />
           </SelectTrigger>
-          <SelectContent>
+          <SelectContent className="z-[100] bg-white border-gray-200 shadow-lg">
             {municipiosBoyaca.map((m) => (
               <SelectItem key={m} value={m}>
                 {m}

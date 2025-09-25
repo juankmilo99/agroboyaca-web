@@ -70,6 +70,61 @@ export default function Home() {
         </div>
       </section>
 
+      {/* QR de Pago */}
+      <section className="bg-gradient-to-r from-emerald-50 to-green-50 rounded-xl p-8">
+        <div className="max-w-4xl mx-auto">
+          <div className="text-center mb-8">
+            <h2 className="text-2xl font-semibold text-emerald-800 mb-2">
+              Pago Rápido y Seguro
+            </h2>
+            <p className="text-emerald-700">
+              Escanea el código QR para realizar pagos instantáneos con tu billetera digital
+            </p>
+          </div>
+          
+          <div className="flex flex-col md:flex-row items-center justify-center gap-8">
+            <div className="flex-shrink-0">
+              <div className="bg-white p-4 rounded-xl shadow-lg">
+                <Image
+                  src="/images/qr_pago.png"
+                  alt="Código QR para pagos"
+                  width={200}
+                  height={200}
+                  className="rounded-lg"
+                />
+              </div>
+            </div>
+            
+            <div className="text-center md:text-left max-w-md">
+              <h3 className="text-lg font-semibold text-emerald-800 mb-3">
+                Métodos de pago aceptados
+              </h3>
+              <ul className="space-y-2 text-emerald-700">
+                <li className="flex items-center gap-2">
+                  <span className="w-2 h-2 bg-emerald-500 rounded-full"></span>
+                  Nequi
+                </li>
+                <li className="flex items-center gap-2">
+                  <span className="w-2 h-2 bg-emerald-500 rounded-full"></span>
+                  Daviplata
+                </li>
+                <li className="flex items-center gap-2">
+                  <span className="w-2 h-2 bg-emerald-500 rounded-full"></span>
+                  Bancolombia a la mano
+                </li>
+                <li className="flex items-center gap-2">
+                  <span className="w-2 h-2 bg-emerald-500 rounded-full"></span>
+                  Transferencia bancaria
+                </li>
+              </ul>
+              <p className="text-sm text-emerald-600 mt-4">
+                Pagos procesados de forma segura y instantánea
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Productos destacados */}
       <section>
         <div className="flex items-center justify-between mb-6">

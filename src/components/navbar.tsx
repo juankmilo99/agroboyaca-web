@@ -1,12 +1,15 @@
 "use client";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { ShoppingCart, Leaf, Menu } from "lucide-react";
+import { ShoppingCart, Leaf, Menu, User } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
+import { useState } from "react";
+import { CartDropdown } from "@/components/cart-dropdown";
 
 export function Navbar() {
   const pathname = usePathname();
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
   const links = [
     { href: "/", label: "Inicio" },
     { href: "/productos", label: "Productos" },
@@ -34,9 +37,26 @@ export function Navbar() {
           ))}
         </nav>
         <div className="ml-auto flex items-center gap-2">
-          <Button variant="outline" size="icon" aria-label="Carrito">
-            <ShoppingCart className="h-4 w-4" />
-          </Button>
+          <CartDropdown />
+          {isLoggedIn ? (
+            <div className="flex items-center gap-2">
+              <Button variant="outline" size="sm">
+                <User className="h-4 w-4 mr-2" />
+                Mi cuenta
+              </Button>
+              <Button 
+                variant="ghost" 
+                size="sm"
+                onClick={() => setIsLoggedIn(false)}
+              >
+                Cerrar sesión
+              </Button>
+            </div>
+          ) : (
+            <Button asChild variant="outline" size="sm">
+              <Link href="/login">Iniciar sesión</Link>
+            </Button>
+          )}
           <Button className="hidden sm:inline-flex">Explora el mercado</Button>
           <Button variant="ghost" size="icon" className="md:hidden">
             <Menu className="h-5 w-5" />

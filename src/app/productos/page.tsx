@@ -24,9 +24,9 @@ export default function CatalogPage() {
   }, [filters]);
 
   return (
-    <div className="flex flex-col md:flex-row gap-6">
+    <div className="flex flex-col md:flex-row gap-6 relative">
       <FiltersSidebar value={filters} onChange={setFilters} />
-      <div className="flex-1">
+      <div className="flex-1 relative z-0">
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {productos.map((p: Product) => (
             <ProductCard key={p.id} product={p} />

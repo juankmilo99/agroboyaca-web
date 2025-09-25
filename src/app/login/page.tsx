@@ -19,7 +19,7 @@ export default function LoginPage() {
         <div className="absolute inset-0 bg-black/20" />
         <div className="relative z-10 p-10 text-white flex flex-col justify-center">
           <h1 className="text-4xl font-bold mb-4">
-            Bienvenido a AgroBoyacá
+            Bienvenido a AgroNexo
           </h1>
           <p className="text-xl mb-8 text-white/90">
             Conectamos productores locales con consumidores conscientes. 
